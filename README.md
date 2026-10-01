@@ -15,7 +15,8 @@
    npm start
    ```
 
-6. ব্রাউজারে   ```bash
+6. ব্রাউজারে
+7.  ```bash
    git remote add origin https://github.com/muradhosenrafi/deshi-bhasha-AI-Powered.git
    ``` খুলুন।
 
