@@ -14,6 +14,7 @@
    ```bash
    npm start
    ```
+   ```git remote add origin https://github.com/muradhosenrafi/deshi-bhasha-AI-Powered.git```
 
 5. ব্রাউজারে `[http://localhost:3000](https://deshi-bhasha-setu.muradhosenrafi.chatgpt.site/)` খুলুন।
 
