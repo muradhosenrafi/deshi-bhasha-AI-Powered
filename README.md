@@ -16,8 +16,8 @@
    ```
 
 6. ব্রাউজারে খুলুন।
-7. ```bash
- https://deshi-bhasha-setu.muradhosenrafi.chatgpt.site/
+ ```bash
+  https://deshi-bhasha-setu.muradhosenrafi.chatgpt.site
    ```
 
 এখানে কোনো npm dependency নেই; Node-এর built-in HTTP ও fetch ব্যবহার করা হয়েছে। API key কেবল সার্ভারের `.env`-এ রাখুন, frontend-এ নয়। API key ছাড়া পেজ দেখা যাবে, তবে অনুবাদ endpoint অনুবাদ চালাবে না। Gemini free tier-এর quota এবং data-use শর্ত প্রযোজ্য; sensitive text পাঠাবেন না।
