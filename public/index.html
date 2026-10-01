@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="bn">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f7f6f2" />
+    <meta name="description" content="বাংলাদেশের আঞ্চলিক বাংলা থেকে প্রমিত বাংলা, ইংরেজি এবং পছন্দের ভাষায় অনুবাদ করুন।" />
+    <title>দেশি ভাষা সেতু — আঞ্চলিক বাংলা অনুবাদক</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Sans+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="দেশি ভাষা সেতু হোম">
+        <span class="brand-mark" aria-hidden="true">আ</span>
+        <span><strong>দেশি ভাষা সেতু</strong><small>বাংলাদেশের কথার অনুবাদক</small></span>
+      </a>
+      <div class="top-note"><span class="live-dot"></span> ৬৪ জেলার কথ্যরীতির জন্য তৈরি</div>
+    </header>
+
+    <main class="layout">
+      <section class="intro">
+        <div class="eyebrow"><span class="eyebrow-line"></span> REGIONAL BANGLA TRANSLATOR</div>
+        <h1>নিজের ভাষায় বলুন।<br /><em>সবাই বুঝবে।</em></h1>
+        <p>বাংলাদেশের আঞ্চলিক বাংলা লিখুন বা কথার মতো করে টাইপ করুন। আমরা ভাষার টান, আবেগ আর প্রসঙ্গ বুঝে অনুবাদ করব।</p>
+        <div class="district-pills" aria-label="সমর্থিত আঞ্চলিক ভাষার উদাহরণ">
+          <span>চাটগাঁইয়া</span><span>সিলেটি</span><span>নোয়াখালী</span><span>বরিশাল</span><span>রংপুরী</span><span>ঢাকাইয়া</span>
+          <span class="more-pill">আরও ৬৪ জেলা</span>
+        </div>
+      </section>
+
+      <section class="translator-card" aria-label="অনুবাদক">
+        <div class="card-heading">
+          <div><span class="section-kicker">আপনার বাক্য</span><h2>কথাটা লিখুন</h2></div>
+          <span class="step-mark">01 <i>/ 02</i></span>
+        </div>
+        <label class="sr-only" for="sourceText">আঞ্চলিক ভাষায় বাক্য</label>
+        <div class="input-wrap">
+          <textarea id="sourceText" maxlength="5000" placeholder="যেমন: তুঁই কই যাইতাছস? আমারে না কইয়া যাইস না…" spellcheck="false"></textarea>
+          <button class="clear-button" id="clearButton" type="button" title="মুছে ফেলুন" aria-label="মুছে ফেলুন">×</button>
+        </div>
+        <div class="voice-tools">
+          <button class="voice-button" id="voiceButton" type="button" aria-pressed="false">
+            <svg class="mic-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="9" y="3" width="6" height="12" rx="3"></rect><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3m-4 0h8"></path></svg>
+            <span id="voiceButtonLabel">কথা বলে লিখুন</span>
+          </button>
+          <span class="voice-hint" id="voiceHint">মাইক্রোফোনে চাপ দিয়ে বাংলায় বলুন</span>
+        </div>
+        <div class="input-foot"><span>বানান যেমন শোনায় তেমন লিখলেও হবে</span><span id="charCount">0 / 5000</span></div>
+        <div class="controls">
+          <label class="control-field"><span>জেলা / কথ্যরীতি <b>ঐচ্ছিক</b></span>
+            <select id="districtSelect" aria-label="জেলা নির্বাচন করুন"></select>
+          </label>
+          <label class="control-field"><span>অনুবাদের ভাষা</span>
+            <select id="targetSelect" aria-label="অনুবাদের ভাষা">
+              <option>English</option><option>Spanish</option><option>French</option><option>Arabic</option>
+              <option>Hindi</option><option>Japanese</option><option>Korean</option><option>Chinese (Simplified)</option>
+              <option>German</option><option>Portuguese</option><option>Italian</option><option>Turkish</option>
+              <option>Urdu</option><option>Malay</option><option>Other (type below)</option>
+            </select>
+          </label>
+        </div>
+        <div class="other-language hidden" id="otherLanguageWrap"><input id="otherLanguage" maxlength="50" placeholder="ভাষার নাম লিখুন, যেমন: Swahili" aria-label="অন্য ভাষার নাম" /></div>
+        <div class="submit-row">
+          <span class="secure-note"><span aria-hidden="true">✦</span> অনুবাদে এআই সহায়তা</span>
+          <button class="translate-button" id="translateButton" type="button"><span>অনুবাদ করুন</span><span class="arrow" aria-hidden="true">↗</span></button>
+        </div>
+        <div class="status-message" id="statusMessage" role="status" aria-live="polite"></div>
+      </section>
+
+      <section class="results hidden" id="results" aria-live="polite">
+        <div class="results-top"><div><span class="section-kicker">আপনার অনুবাদ</span><h2>অর্থটা হলো…</h2></div><button id="copyButton" class="copy-button" type="button"><span aria-hidden="true">▢</span> সব কপি</button></div>
+        <div class="result-grid">
+          <article class="result-panel dialect-panel"><div class="panel-label"><span class="label-icon">⌖</span> শনাক্ত কথ্যরীতি</div><div class="result-text" id="dialectResult"></div></article>
+          <article class="result-panel"><div class="panel-label"><span class="label-icon">ক</span> প্রমিত বাংলা</div><div class="result-text bangla" id="standardResult"></div></article>
+          <article class="result-panel"><div class="panel-label"><span class="label-icon">EN</span> English</div><div class="result-text english" id="englishResult"></div></article>
+          <article class="result-panel target-panel"><div class="panel-label"><span class="label-icon">↗</span> <span id="targetLabel">Target language</span></div><div class="result-text" id="targetResult"></div></article>
+        </div>
+        <div class="details-grid">
+          <article class="detail-card"><div class="panel-label">শব্দ ও বাক্যাংশ</div><div id="vocabularyResult" class="vocabulary-list"></div></article>
+          <article class="detail-card tone-card"><div class="panel-label">কথার সুর ও প্রসঙ্গ</div><p id="culturalResult"></p></article>
+        </div>
+        <p class="disclaimer">আঞ্চলিক ভাষা এলাকাভেদে ও পরিবারভেদে বদলাতে পারে। অস্পষ্ট শব্দের ক্ষেত্রে অনুবাদটি সম্ভাব্য অর্থের ভিত্তিতে করা হয়।</p>
+      </section>
+
+      <section class="examples">
+        <div class="examples-title"><span class="section-kicker">শুরু করতে সাহায্য</span><h2>একটা উদাহরণ দিয়ে দেখুন</h2></div>
+        <div class="example-list">
+          <button type="button" class="example-chip" data-example="তুঁই কই যাইতাছস? আমারে না কইয়া যাইস না।" data-district="নোয়াখালী"><span>নোয়াখালী টান</span><strong>তুঁই কই যাইতাছস?</strong><i>→</i></button>
+          <button type="button" class="example-chip" data-example="তুমি কিতা কররায়? আইজকা আমরার লগে যাইবা নি?" data-district="সিলেট"><span>সিলেটি টান</span><strong>তুমি কিতা কররায়?</strong><i>→</i></button>
+          <button type="button" class="example-chip" data-example="অঁই তোঁয়ারে কইলাম, আঁই আইজকা যাইতাম ন।" data-district="চট্টগ্রাম"><span>চাটগাঁইয়া টান</span><strong>অঁই তোঁয়ারে কইলাম…</strong><i>→</i></button>
+        </div>
+      </section>
+      <footer>বাংলাদেশের ভাষার বৈচিত্র্যকে সম্মান করে তৈরি <span>♥</span></footer>
+    </main>
+    <script src="/app.js" defer></script>
+  </body>
+</html>

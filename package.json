@@ -1,0 +1,14 @@
+{
+  "name": "bangla-dialect-translator",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Translate Bangladeshi regional Bengali into Standard Bengali, English, and a chosen language.",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
